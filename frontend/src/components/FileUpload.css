@@ -1,0 +1,6 @@
+.fileUpload{
+    border: 2px solid var(--text-col);
+    background-color: var(--bg-col-1);
+    border-radius: var(--rad-0);
+    padding: 1em;
+}

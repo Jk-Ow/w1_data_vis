@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import * as Papa from 'papaparse'
+import './FileUpload.css'
 
 function FileUpload({activeIndex, setTabItems, tabItems}){
 
@@ -20,10 +21,27 @@ function FileUpload({activeIndex, setTabItems, tabItems}){
         const papaParsed = Papa.parse(content, {
           header: true,
           complete: function(results) {
-            console.log("parsed csv");
+            //Anfuehrungszeichen entfernen
+            console.log(results.data);
+            const cleanedData = results.data.map(row => 
+              Object.fromEntries(
+                Object.entries(row).map(([key, value]) => [key.replace(/"/g, ''), value.replace(/"/g, '')]) // Remove quotes from each value
+              )
+            );
+            setTabItems((prevTabItems)=>{
+                let newItems = [...prevTabItems];
+                newItems[activeIndex]["tabData"]={
+                    ...prevTabItems[activeIndex]["tabData"],
+                    fileName: file.name,
+                    fileOpen: true,
+                    file: cleanedData
+                }
+                return newItems
+            })
+
           },
         });
-
+        /*
         const parsedData = papaParsed.data
 
         setTabItems((prevTabItems)=>{
@@ -35,7 +53,7 @@ function FileUpload({activeIndex, setTabItems, tabItems}){
                 file: parsedData
             }
             return newItems
-        })
+        })*/
     };
 
     // Handle errors
@@ -48,7 +66,7 @@ function FileUpload({activeIndex, setTabItems, tabItems}){
   };
 
   return (
-    <div>
+    <div className='fileUpload'>
       <input type="file" accept=".csv,.xlsx" onChange={handleFileChange} />
     </div>
   );
