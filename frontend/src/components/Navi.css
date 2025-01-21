@@ -1,0 +1,13 @@
+.navbar{
+    background-color: var(--bg-col-1);
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    border-bottom: 2px solid var(--text-col);
+}
+.navbar>.tabs{
+    display: flex;
+    justify-content: flex-start;
+    column-gap: .5em;
+}
