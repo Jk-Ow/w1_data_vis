@@ -1,6 +1,7 @@
 import "./Navi.css"
 import appLogo from '/logo.svg'
 import Button from "./Button";
+import Tooltip from "./Tooltip";
 
 
 function Navi({tabItems, setTabItems, activeIndex, setactiveIndex}){
@@ -9,16 +10,25 @@ function Navi({tabItems, setTabItems, activeIndex, setactiveIndex}){
         <div className="navbar">
             <div className="tabs">
                 {tabItems.map((tab, index) =>
-                    <Button activeState={activeIndex==index} clickEvent={()=>setactiveIndex(index)} key={index}>{tab.title}</Button>
+                    <Tooltip tooltip={
+                        index>0?
+                        "Hier kannst du Visualisierungs-Tab Nr. "+index+" aufrufen.":
+                        "Hier kannst du den Daten-Tab aufrufen."
+                        }>
+                        <Button activeState={activeIndex==index} clickEvent={()=>setactiveIndex(index)} key={index}>{tab.title}</Button>
+                    </Tooltip>
                 )}
-                <Button clickEvent={()=>setTabItems((prevTabItems)=>([
-                    ...prevTabItems,
-                    {
-                    title: `Vis ${prevTabItems.length}`,
-                    type: "vis",
-                    tabData: {}
-                    }
-                ]))}>Add Vis</Button>
+                <Tooltip tooltip="Hier kannst du neue Visualisierungs-Tabs hinzufügen.">
+                    <Button clickEvent={()=>setTabItems((prevTabItems)=>([
+                        ...prevTabItems,
+                        {
+                        title: `Vis ${prevTabItems.length}`,
+                        type: "vis",
+                        tabData: {}
+                        }
+                    ]))}>Add Vis</Button>
+                </Tooltip>
+                
             </div> 
             <img src={appLogo} className="logo" alt="Eyes on Data logo" />
         </div>

@@ -6,7 +6,7 @@
     overflow: hidden;
     opacity: 0;
     position: absolute;
-    font-size: .7em;
+    font-size: .7rem;
     line-height: 1.1;
     top: 0;
     bottom: 100%;
@@ -15,6 +15,7 @@
     border: 2px solid;
     border-radius: var(--rad-0);
     background-color: var(--bg-col-0);
+    z-index: 100;
 }
 .tooltip::before{
     content: "TIPP: ";
@@ -22,7 +23,7 @@
 }
 .tooltipContainer:hover .tooltip{
     display: block;
-    transition: all .5s;
+    transition: all .2s;
     transition-delay: 3s;
     -o-transition-delay: 3s;
     opacity: 0.9;
@@ -30,7 +31,7 @@
     border: 2px solid var(--text-col);
 
     top: .3em;
-    bottom: .3em;
+    bottom: unset;
     left: .3em;
     right: .3em;
 
