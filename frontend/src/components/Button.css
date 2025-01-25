@@ -1,7 +1,7 @@
 button{
     color: var(--text-col);
     background-color: var(--bg-col-0);
-    border-radius: 8px;
+    border-radius:  var(--rad-0);
     border: 2px solid var(--text-col);;
     padding: 0.4em 1em;
     font-size: 1em;

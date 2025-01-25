@@ -41,19 +41,6 @@ function FileUpload({activeIndex, setTabItems, tabItems}){
 
           },
         });
-        /*
-        const parsedData = papaParsed.data
-
-        setTabItems((prevTabItems)=>{
-            let newItems = [...prevTabItems];
-            newItems[activeIndex]["tabData"]={
-                ...prevTabItems[activeIndex]["tabData"],
-                fileName: file.name,
-                fileOpen: true,
-                file: parsedData
-            }
-            return newItems
-        })*/
     };
 
     // Handle errors

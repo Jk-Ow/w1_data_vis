@@ -16,8 +16,8 @@ let visTab = {
   title: "Vis 1",
   type: "vis",
   tabData: {
-    varX: "somename",
-    varY: "othername"
+    xAxis: "somename",
+    yAxis: "othername"
   }
 }
 

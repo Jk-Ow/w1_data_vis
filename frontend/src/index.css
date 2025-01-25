@@ -3,6 +3,7 @@
   --bg-col-1: #313141;
   --text-col: #eed1d1;
   --accent-col-0: darkred;
+  --rad-0: 8px;
 }
 @media (prefers-color-scheme: light) {
 :root{

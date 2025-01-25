@@ -1,0 +1,13 @@
+.tab{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+    &.dataTab{
+        justify-content: center;
+    }
+    &.visTab{
+        justify-content: space-between;
+        border: 2px solid var(--text-col)
+    }
+}
