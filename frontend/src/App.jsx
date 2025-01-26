@@ -10,14 +10,21 @@ let dataTab = {
     fileKeys:[],
     file: null,
     fileOpen: false,
-  }
+  },
+  visTypes:[
+    "Line-Graph",
+    "Bar-Graph",
+    "Boxplot",
+    "Statistic Values"
+  ]
 }
 let visTab = {
   title: "Vis 1",
   type: "vis",
   tabData: {
-    xAxis: "somename",
-    yAxis: "othername"
+    xAxis: "",
+    yAxis: "",
+    visType: "",
   }
 }
 

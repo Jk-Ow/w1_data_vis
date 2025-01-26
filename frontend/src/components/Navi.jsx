@@ -14,7 +14,7 @@ function Navi({tabItems, setTabItems, activeIndex, setactiveIndex}){
                         index>0?
                         "Hier kannst du Visualisierungs-Tab Nr. "+index+" aufrufen.":
                         "Hier kannst du den Daten-Tab aufrufen."
-                        }>
+                        } key={index}>
                         <Button activeState={activeIndex==index} clickEvent={()=>setactiveIndex(index)} key={index}>{tab.title}</Button>
                     </Tooltip>
                 )}
