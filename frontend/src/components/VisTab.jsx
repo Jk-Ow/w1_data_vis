@@ -7,7 +7,9 @@ function VisTab({ tabItems, setTabItems, activeIndex }) {
     return (
         <div className="visTab tab">
             <div className="TableVis">
-            <D3Graph activeIndex={activeIndex}/>
+            <D3Graph    activeIndex={activeIndex}
+                        tabData={tabItems[activeIndex].tabData}
+                        file={tabItems[0].tabData.fileOpen?tabItems[0].tabData.file:{}}/>
             </div>
             <VisMenu tabItems={tabItems} setTabItems={setTabItems} activeIndex={activeIndex}/>
         </div>
