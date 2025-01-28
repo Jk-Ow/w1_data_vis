@@ -23,7 +23,7 @@ function VisMenu({tabItems, setTabItems, activeIndex}){
             return newValues;
         })
 
-    },[xAxis, yAxis, visType, activeIndex]);
+    },[xAxis, yAxis, visType]);
 
     return(
         <>
